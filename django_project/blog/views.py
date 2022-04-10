@@ -1,9 +1,29 @@
-from ssl import HAS_TLSv1_1
 from django.shortcuts import render
-from django.http import HttpResponse
+
+posts = [
+    {
+        'author': "AdamR",
+        'title': "Blog Post 1",
+        'content': 'First post content',
+        'date_posted': "August 27 2022"
+
+    },
+    {
+        'author': "Sarah C",
+        'title': "Blog Post 2",
+        'content': 'Second post content',
+        'date_posted': "August 28 2022"
+
+    }
+]
 
 def home(request):
-    return HttpResponse('<h1>Blog Home</h1>')
+    context = {
+        'posts':posts
+    }
+    return render(request, 'blog/home.html', context)
+    # return HttpResponse('<h1>Blog Home</h1>')
 
 def about(request):
-    return HttpResponse('<h1>About the Blog</h1>')
+    return render(request, 'blog/about.html', {'title': "About"})
+
