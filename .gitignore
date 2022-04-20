@@ -15,8 +15,10 @@ develop-eggs/
 dist/
 eggs/
 lib/
+Lib/
 lib64/
 parts/
+Scrits/
 sdist/
 var/
 *.egg-info/
